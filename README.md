@@ -1,5 +1,5 @@
 
-* ## 1. What are some differences between interfaces and types in TypeScript ?
+## 1. What are some differences between interfaces and types in TypeScript ?
 
 ### ✅ `type`
 - type and interface are ways to define custom types, 
@@ -16,7 +16,7 @@
 
 
 
-* ## 3. Explain the difference between any, unknown, and never types in TypeScript ?
+## 3. Explain the difference between any, unknown, and never types in TypeScript ?
 
 - ✅ `any`: any data type is used when data type can be any type which has no type safety, allows any value.
 - ✅ `unknown`: unknown is used when we dont know the exact data type here, its type safe version of any. it can take also take any type data.
