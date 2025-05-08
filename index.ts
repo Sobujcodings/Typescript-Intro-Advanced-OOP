@@ -1,4 +1,3 @@
-// 1 (done -> final check)
 function formatString(input: string, toUpper?: boolean) {
   if (toUpper === true || toUpper === undefined) {
     const lowerCase = input.toUpperCase();
@@ -11,25 +10,17 @@ function formatString(input: string, toUpper?: boolean) {
   }
 }
 
-// 2 (done -> final check)
+
 function filterByRating(
   items: { title: string; rating: number }[]
-): { title: string; rating: number }[] {
-  // console.log(items);
-  items.forEach((element) => {
-    if (element.rating >= 4) {
-      console.log(element);
-      return element;
-    }
-  });
+): { title: string; rating: number }[] 
+{
+  const filteredItems = items.filter((item) => item.rating >= 4);
+  console.log(filteredItems); 
+  return filteredItems;
 }
-const books = [
-  { title: "Book A", rating: 4.5 },
-  { title: "Book B", rating: 3.2 },
-  { title: "Book C", rating: 5.0 },
-];
 
-// 3 (do it) generic function
+
 function concatenateArrays<T>(...arrays: T[][]) {
   let result: T[] = [];
   for (const array of arrays) {
@@ -39,12 +30,14 @@ function concatenateArrays<T>(...arrays: T[][]) {
   return result;
 }
 
-// 4
+
+
 class Vehicle {
   private make: string;
   private year: number;
   getInfo() {
     console.log(`"Make: ${this.make}, Year: ${this.year}"`);
+    return `"Make: ${this.make}, Year: ${this.year}"`;
   }
   constructor(make: string, year: number) {
     this.make = make;
@@ -55,15 +48,16 @@ class Car extends Vehicle {
   private model: string;
   getModel() {
     console.log(`"Model: ${this.model}"`);
+    return `"Model: ${this.model}"`;
   }
   constructor(make: string, year: number, model: string) {
     super(make, year);
     this.model = model;
   }
 }
-const myCar = new Car("Toyota", 2020, "Corolla");
 
-// 5
+
+
 function processValue(value: string | number): number {
   if (typeof value === "string") {
     console.log(value.length);
@@ -76,29 +70,28 @@ function processValue(value: string | number): number {
   }
 }
 
-// 6
+
+
 interface Product {
   name: string;
   price: number;
 }
-
 function getMostExpensiveProduct(products: Product[]): Product | null {
   if (products.length === 0) {
     return null;
   }
-
-  let maxProduct = products[0];
-
+  let max = products[0];
   products.forEach((product) => {
-    if (product.price > maxProduct.price) {
-      maxProduct = product;
+    if (product.price > max.price) {
+      max = product;
     }
   });
-  console.log(maxProduct);
-  return maxProduct;
+  console.log(max);
+  return max;
 }
 
-// 7
+
+
 enum Day {
   Monday,
   Tuesday,
@@ -110,16 +103,22 @@ enum Day {
 }
 
 function getDayType(day: Day): string {
+  let result: string;
+
   switch (day) {
     case Day.Saturday:
     case Day.Sunday:
-      return "Weekend";
+      result = "Weekend";
+      break;
     default:
-      return "Weekday";
+      result = "Weekday";
   }
+  console.log(result);
+  return result;
 }
 
-// 8
+
+
 async function squareAsync(params: number): Promise<number> {
   return new Promise<number>((resolve, reject) => {
     if (params < 0) {
