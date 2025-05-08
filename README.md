@@ -1,5 +1,3 @@
-# https://github.com/Sobujcodings/Typescript-Intro-Advanced-OOP
-
 
 * 1.What are some differences between interfaces and types in TypeScript?
 
